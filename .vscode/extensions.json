@@ -1,0 +1,6 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "hzgood.dart-data-class-generator"
+    ]
+}
