@@ -9,15 +9,18 @@ class User {
   final String adress;
   final String type;
   final String token;
+  final List<dynamic> cart;
 
-  User(
-      {required this.id,
-      required this.name,
-      required this.email,
-      required this.password,
-      required this.adress,
-      required this.type,
-      required this.token});
+  User({
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.password,
+    required this.adress,
+    required this.type,
+    required this.token,
+    required this.cart,
+  });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -28,6 +31,7 @@ class User {
       'adress': adress,
       'type': type,
       'token': token,
+      'cart': cart
     };
   }
 
@@ -40,6 +44,8 @@ class User {
       adress: map['adress'] as String,
       type: map['type'] as String,
       token: map['token'] as String,
+      cart: List<Map<String, dynamic>>.from(
+          map['cart']?.map((x) => Map<String, dynamic>.from(x))),
     );
   }
 
@@ -47,4 +53,26 @@ class User {
 
   factory User.fromJson(String source) =>
       User.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  User copyWith({
+    String? id,
+    String? name,
+    String? email,
+    String? password,
+    String? adress,
+    String? type,
+    String? token,
+    List<dynamic>? cart,
+  }) {
+    return User(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      email: email ?? this.email,
+      password: password ?? this.password,
+      adress: adress ?? this.adress,
+      type: type ?? this.type,
+      token: token ?? this.token,
+      cart: cart ?? this.cart,
+    );
+  }
 }

@@ -39,11 +39,11 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         title: 'E_COMMERCE_APP',
         theme: ThemeData(
-            colorScheme:
-                ColorScheme.light(primary: GlobalVariables.secondaryColor),
+            colorScheme: const ColorScheme.light(
+                primary: GlobalVariables.secondaryColor),
             primarySwatch: Colors.blue,
             scaffoldBackgroundColor: GlobalVariables.backgroundColor,
-            iconTheme: IconThemeData(color: Colors.black)),
+            iconTheme: const IconThemeData(color: Colors.black)),
         onGenerateRoute: (settings) => generateRoute(settings),
         home: Provider.of<UserProvider>(context).user.token.isNotEmpty
             ? Provider.of<UserProvider>(context).user.type == 'user'

@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   color: Colors.transparent,
                   height: 42,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: const Icon(
                     Icons.mic,
                     color: Colors.black,
